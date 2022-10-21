@@ -39,12 +39,22 @@ function clickMe() {
     alert("You clicked me!");
 }
 
-export default function Login() {
-    return (
-        <>
-            <div>
-                <Button onClick={clickMe}>Log in with Spotify</Button>
-            </div>
-        </>
-    );
+/* Setup for Spotify API Auth */
+const client_id = '27240f6fd5374a14bd84f3598ed0725c';
+const auth_endpoint = 'https://accounts.spotify.com/authorize';
+const redirect_url = 'https://localhost:3000/callback';
+const scope = 'user-read-email user-read-private user-top-read';
+
+
+export default function App() {
+  const handleLogin = () =>{
+    window.location = `${auth_endpoint}?client_id=${client_id}&redirect_uri=${redirect_url}&scope=${scope}&response_type=token&show_dialog=true`
+  };
+  return (
+    <>
+      <div>
+        <Button onClick={handleLogin}>Login to Spotify</Button>
+      </div>
+    </>
+  );
 }
