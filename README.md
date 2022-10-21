@@ -1,1 +1,8 @@
 # Spotify BPM Playlist Generator
+
+[] Is an all-in-one solution for discovering and creating playlists based off of BPM.
+The core functionality of the site is the playlist generator. It takes in BPM, length, and two genres, and automatically
+generates a playlist consisting of songs near the given BPM. 
+This would be a useful tool for quickly creating and sharing workout playlists, tailored to your likes and interests.
+Users can share generated playlists, and the site will curate these playlists and allow users to search through the playlist database.
+Users can log in to have their feed and recommendations personalized.
