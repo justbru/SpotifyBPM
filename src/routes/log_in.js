@@ -42,7 +42,7 @@ function clickMe() {
 /* Setup for Spotify API Auth */
 const client_id = '27240f6fd5374a14bd84f3598ed0725c';
 const auth_endpoint = 'https://accounts.spotify.com/authorize';
-const redirect_url = 'https://localhost:3000/callback';
+const redirect_url = 'http://localhost:3000';
 const scope = 'user-read-email user-read-private user-top-read';
 
 
