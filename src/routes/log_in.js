@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import background from "../assets/login_background.png"
 
 const theme = {
     blue: {
-        default: "#3f51b5",
-        hover: "#283593"
+        default: "#1DB954",
+        hover: "#191414"
     },
     pink: {
         default: "#e91e63",
@@ -18,7 +19,7 @@ const Button = styled.button`
   border-radius: 5px;
   outline: 0;
   text-transform: uppercase;
-  margin: 350px 640px;
+  margin: 330px 575px;
   cursor: pointer;
   box-shadow: 0px 2px 2px lightgray;
   transition: ease background-color 250ms;
@@ -45,16 +46,37 @@ const auth_endpoint = 'https://accounts.spotify.com/authorize';
 const redirect_url = 'http://localhost:3000';
 const scope = 'user-read-email user-read-private user-top-read';
 
-//create function that takes useraccesstoken and returns it from url
+const styles = {
+    container: {
+        backgroundImage: `url(${background})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        width: '100vw',
+        height: '100vh'
+    }
+};
+
+
 export default function App() {
-  const handleLogin = () =>{
-    window.location = `${auth_endpoint}?client_id=${client_id}&redirect_uri=${redirect_url}&scope=${scope}&response_type=token&show_dialog=true`
-  };
-  return (
-    <>
-      <div>
-        <Button onClick={handleLogin}>Login to Spotify</Button>
-      </div>
-    </>
-  );
+    const handleLogin = () => {
+        window.location = `${auth_endpoint}?client_id=${client_id}&redirect_uri=${redirect_url}&scope=${scope}&response_type=token&show_dialog=true`
+    };
+    return (
+        <>
+            <div style={{
+                backgroundImage: `url(${background})`,
+                minWidth: `100%`,
+                minHeight: `100%`,
+                position: `fixed`,
+                marginTop: `-8px`,
+                marginLeft: `-8px`,
+                backgroundSize: `cover`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: `center`
+            }}>
+                <Button onClick={handleLogin}>Login with Spotify</Button>
+            </div>
+        </>
+    );
 }
