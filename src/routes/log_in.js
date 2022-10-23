@@ -45,7 +45,7 @@ const auth_endpoint = 'https://accounts.spotify.com/authorize';
 const redirect_url = 'http://localhost:3000';
 const scope = 'user-read-email user-read-private user-top-read';
 
-
+//create function that takes useraccesstoken and returns it from url
 export default function App() {
   const handleLogin = () =>{
     window.location = `${auth_endpoint}?client_id=${client_id}&redirect_uri=${redirect_url}&scope=${scope}&response_type=token&show_dialog=true`
