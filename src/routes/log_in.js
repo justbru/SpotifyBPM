@@ -1,17 +1,4 @@
-import styled from "styled-components";
-import background from "../assets/login_background.png"
 import "../assets/style.css"
-
-const theme = {
-    blue: {
-        default: "#1DB954",
-        hover: "#191414"
-    },
-    pink: {
-        default: "#e91e63",
-        hover: "#ad1457"
-    }
-};
 
 /* Setup for Spotify API Auth */
 const client_id = '27240f6fd5374a14bd84f3598ed0725c';
@@ -30,9 +17,9 @@ export default function App() {
             </head>
             <body>
                 <header class="login-header">
-                    <h1>Spotigo</h1>
-                    <h2 className="large-text-login">Discover, Create, and Optimize</h2>
-                    <h3 className="large-text-login">Like Never Before</h3>
+                    <h1> Spotigo</h1>
+                    <h2> Discover, Create, and Optimize</h2>
+                    <h3> Like Never Before</h3>
                     <h4> Explore how Beats Per Minute (BPM) can change</h4>
                     <h4> the way you interact with music</h4>
                 </header>
