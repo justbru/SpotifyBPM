@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import background from "../assets/login_background.png"
+import "../assets/style.css"
 
 const theme = {
     blue: {
@@ -12,58 +13,43 @@ const theme = {
     }
 };
 
-const Button = styled.button`
-  background-color: ${(props) => theme[props.theme].default};
-  color: white;
-  padding: 20px 45px;
-  border-radius: 5px;
-  outline: 0;
-  text-transform: uppercase;
-  margin: 330px 575px;
-  cursor: pointer;
-  box-shadow: 0px 2px 2px lightgray;
-  transition: ease background-color 250ms;
-  &:hover {
-    background-color: ${(props) => theme[props.theme].hover};
-  }
-  &:disabled {
-    cursor: default;
-    opacity: 0.7;
-  }
-`;
-
-Button.defaultProps = {
-    theme: "blue"
-};
-
-function clickMe() {
-    alert("You clicked me!");
-}
-
 /* Setup for Spotify API Auth */
 const client_id = '27240f6fd5374a14bd84f3598ed0725c';
 const auth_endpoint = 'https://accounts.spotify.com/authorize';
 const redirect_url = 'http://localhost:3000';
 const scope = 'user-read-email user-read-private user-top-read';
 
-const styles = {
-    container: {
-        backgroundImage: `url(${background})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        width: '100vw',
-        height: '100vh'
-    }
-};
-
-
 export default function App() {
     const handleLogin = () => {
         window.location = `${auth_endpoint}?client_id=${client_id}&redirect_uri=${redirect_url}&scope=${scope}&response_type=token&show_dialog=true`
     };
     return (
-        <>
+        <html className="App">
+            <head>
+                <link rel="stylesheet" href="../assets/style.css" />
+            </head>
+            <body>
+                <header class="login-header">
+                    <h1>Spotigo</h1>
+                    <h2 className="large-text-login">Discover, Create, and Optimize</h2>
+                    <h3 className="large-text-login">Like Never Before</h3>
+                    <h4> Explore how Beats Per Minute (BPM) can change</h4>
+                    <h4> the way you interact with music</h4>
+                </header>
+                <div>
+                    <button onClick={handleLogin} className="login-button">Login with Spotify</button>
+                </div>
+
+            </body>
+        </html>
+    );
+}
+
+
+
+/*
+<html>
+            <link rel="stylesheet" href="css/style.css"></link>
             <div style={{
                 backgroundImage: `url(${background})`,
                 minWidth: `100%`,
@@ -75,8 +61,18 @@ export default function App() {
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: `center`
             }}>
+                <header id="header">
+                    <nav>
+                        <div class="container">
+                            <div class="text-center">
+                                <a href="/" class="nav-brand text-dard">Justin's Surf Rentals</a>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+                <h1 font_size="" font="arial">This is bigger text.</h1>
                 <Button onClick={handleLogin}>Login with Spotify</Button>
             </div>
-        </>
-    );
-}
+
+        </html>
+*/
