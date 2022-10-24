@@ -1,7 +1,11 @@
+/*
+    Styling for log_in.js
+*/
 .App {
     text-align: center;
 }
 
+/* used for setting the background */
 .login-header {
     background-image: url(./login_background.png);
     background-size: cover;
@@ -16,6 +20,7 @@
     margin-Left: -16px;
 }
 
+/* Used for setting the green bar at the top with the black spotigo text */
 .login-header>h1 {
     color: black;
     background-color: #1DB954;
@@ -25,13 +30,15 @@
     font-family: sans-serif
 }
 
+/* Used for setting the large text above the button; first line */
 .login-header>h2 {
     color: black;
-    margin-top: 45px;
+    margin-top: 55px;
     font-size: xxx-large;
     font-family: sans-serif;
 }
 
+/* Used for setting the large text above the button; second line */
 .login-header>h3 {
     color: black;
     margin-top: -35px;
@@ -39,32 +46,36 @@
     font-family: sans-serif;
 }
 
+/* Used for setting the small text above button */
 .login-header>h4 {
     color: black;
-    margin-top: -15px;
+    margin-top: -10px;
     font-size: large;
     font-weight: lighter;
     font-family: sans-serif;
 }
 
+/* Used for customizing the button */
 .login-button {
     background-color: #1DB954;
     font-size: 24px;
     padding: 10px 30px;
     position: fixed;
-    color: white;
-    padding: 20px 45px;
+    color: black;
+    font-weight: 500;
+    padding: 10px 45px;
     border-radius: 32px;
     outline: 0;
     text-transform: uppercase;
-    margin: 310px -163px;
+    margin: 330px -163px;
     cursor: pointer;
     box-shadow: 0px 2px 2px lightgray;
     transition: ease background-color 250ms;
 }
 
+/* Used for customizing the `continue without login` link */
 .continue-wo-login-link {
     color: gray;
     position: fixed;
-    margin: 100px -75px;
+    margin: 80px -75px;
 }

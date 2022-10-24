@@ -38,7 +38,7 @@ export default function App() {
                     <a
                         className="continue-wo-login-link"
                         href="http://localhost:3000/home"
-                        target="_blank"
+                        target="_self"
                         rel="noopener noreferrer"
                     >
                         Continue without login
