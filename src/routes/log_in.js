@@ -11,12 +11,12 @@ export const getTokenFromUrl = () => {
     return window.location.hash
         .substring(1)
         .split('&')
-        .reduce((initial, item)=>{
+        .reduce((initial, item) => {
             let parts = item.split('=');
             initial[parts[0]] = decodeURIComponent(parts[1])
 
             return initial;
-    }, {});
+        }, {});
 }
 
 export default function App() {
@@ -35,6 +35,14 @@ export default function App() {
                     <h3> Like Never Before</h3>
                     <h4> Explore how Beats Per Minute (BPM) can change</h4>
                     <h4> the way you interact with music</h4>
+                    <a
+                        className="continue-wo-login-link"
+                        href="http://localhost:3000/home"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Continue without login
+                    </a>
                 </header>
                 <div>
                     <button onClick={handleLogin} className="login-button">Login with Spotify</button>

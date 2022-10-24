@@ -25,25 +25,22 @@
     font-family: sans-serif
 }
 
-.login-header>h2{
+.login-header>h2 {
     color: black;
-    text-align: center;
     margin-top: 45px;
     font-size: xxx-large;
     font-family: sans-serif;
 }
 
-.login-header>h3{
+.login-header>h3 {
     color: black;
-    text-align: center;
     margin-top: -35px;
     font-size: xxx-large;
     font-family: sans-serif;
 }
 
-.login-header>h4{
+.login-header>h4 {
     color: black;
-    text-align: center;
     margin-top: -15px;
     font-size: large;
     font-weight: lighter;
@@ -59,7 +56,6 @@
     padding: 20px 45px;
     border-radius: 32px;
     outline: 0;
-    text-align: center;
     text-transform: uppercase;
     margin: 310px -163px;
     cursor: pointer;
@@ -67,3 +63,8 @@
     transition: ease background-color 250ms;
 }
 
+.continue-wo-login-link {
+    color: gray;
+    position: fixed;
+    margin: 100px -75px;
+}
