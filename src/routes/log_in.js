@@ -5,7 +5,7 @@ import "../assets/style.css"
 const client_id = '27240f6fd5374a14bd84f3598ed0725c';
 const auth_endpoint = 'https://accounts.spotify.com/authorize';
 const redirect_url = 'http://localhost:3000/home';
-const scope = 'user-read-private user-read-email';
+const scope = 'user-read-private user-read-email user-library-read';
 
 export default function App() {
     const handleLogin = () => {
