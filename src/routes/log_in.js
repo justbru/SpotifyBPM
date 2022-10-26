@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "../assets/style.css"
 
 /* Setup for Spotify API Auth */
@@ -6,22 +7,9 @@ const auth_endpoint = 'https://accounts.spotify.com/authorize';
 const redirect_url = 'http://localhost:3000/home';
 const scope = 'user-read-private user-read-email';
 
-/* function to extract authorization token from URL */
-export const getTokenFromUrl = () => {
-    return window.location.hash
-        .substring(1)
-        .split('&')
-        .reduce((initial, item) => {
-            let parts = item.split('=');
-            initial[parts[0]] = decodeURIComponent(parts[1])
-
-            return initial;
-        }, {});
-}
-
 export default function App() {
     const handleLogin = () => {
-        window.location = `${auth_endpoint}?client_id=${client_id}&redirect_uri=${redirect_url}&scope=${scope}&response_type=token&show_dialog=true`
+        window.location = `${auth_endpoint}?client_id=${client_id}&redirect_uri=${redirect_url}&scope=${scope}&response_type=token&show_dialog=true`  
     };
     return (
         <html className="App">
