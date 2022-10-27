@@ -20,14 +20,18 @@
     margin-Left: -16px;
 }
 
-/* Used for setting the green bar at the top with the black spotigo text */
+/* Used for setting the green bar at the top with the black spotigo text 
+    !!! Reuse this for any time you need to paste the header bar and logo !!!
+*/
 .login-header>h1 {
     color: black;
     background-color: #1DB954;
     text-align: left;
     margin-top: 0px;
-    padding: 8px 55px;
-    font-family: sans-serif
+    padding: 0px 8px;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-anchor: "middle";
 }
 
 /* Used for setting the large text above the button; first line */
