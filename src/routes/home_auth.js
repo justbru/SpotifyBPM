@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { Router } from "react-router-dom";
+import { useHistory } from "react-router-dom"
 
 /* function to extract authorization token from URL */
 export const getTokenFromUrl = (hash) => {
@@ -15,8 +17,13 @@ export const getTokenFromUrl = (hash) => {
 export default function HomeAuth() {
     useEffect(() => {
       if(window.location.hash){
-        const object = getTokenFromUrl(window.location.hash);
-        console.log({ object });
+        const{
+          access_token,
+          expires_in,
+          token_type,
+        } = getTokenFromUrl(window.location.hash);
+        console.log({ access_token });
+        window.location.hash = "login=True";
       }
     });
 
