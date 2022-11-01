@@ -24,6 +24,10 @@ export default function HomeAuth() {
         } = getTokenFromUrl(window.location.hash);
         console.log({ access_token });
         window.location.hash = "login=True";
+        localStorage.clear();
+        localStorage.setItem("accessToken", access_token);
+        localStorage.setItem("tokenType", token_type);
+        localStorage.setItem("expiresIn", expires_in);
       }
     });
 
