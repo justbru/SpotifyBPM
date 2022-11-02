@@ -9,3 +9,6 @@ generates a playlist consisting of songs near the given BPM.
 
 Prototype:
 https://www.figma.com/file/xZggrNkc4vgaNoWWnbD3Dv/SpotifyBPM?node-id=0%3A1
+
+Code Linter/Style Checker:
+https://eslint.org/
