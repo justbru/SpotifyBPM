@@ -15,23 +15,32 @@ export const getTokenFromUrl = (hash) => {
     return paramsSplit;
 }
 
-const q = document.getElementById('query');
+// Constant to get a users liked songs
+export const liked_songs = async () => {
+    const url = 'https://api.spotify.com/v1/me/tracks';
+    const { data } = await axios.get(url, {
+        headers: {
+            Authorization: `Bearer ${localStorage.accessToken}`,
+        }
+    });
+    console.log(data);
+}
+
+export const search_song = async () => {
+    const url = 'https://api.spotify.com/v1/search';
+    const searchQuery = document.getElementById('song_query').value;
+    const typeQuery = `type=track`;
+    const { data } = await axios.get(`${url}?q=${searchQuery}&${typeQuery}`, {
+        headers: {
+            Authorization: `Bearer ${localStorage.accessToken}`,
+        }
+    });
+    console.log(data);
+}
 
 export default function HomeAuth() {
-
-    const search_song = async () => {
-        const url = 'https://api.spotify.com/v1/search';
-        const searchQuery = document.getElementById('song_query').value;
-        const typeQuery = `type=track`;
-        const { data } = await axios.get(`${url}?q=${searchQuery}&${typeQuery}`, {
-            headers: {
-                Authorization: `Bearer ${localStorage.accessToken}`,
-            }
-        });
-        console.log(data);
-    }
-
     useEffect(() => {
+        localStorage.clear();
         if (window.location.hash) {
             const {
                 access_token,
@@ -40,7 +49,6 @@ export default function HomeAuth() {
             } = getTokenFromUrl(window.location.hash);
             console.log({ access_token });
             window.location.hash = "login=True";
-            localStorage.clear();
             localStorage.setItem("accessToken", access_token);
             localStorage.setItem("tokenType", token_type);
             localStorage.setItem("expiresIn", expires_in);
@@ -53,6 +61,9 @@ export default function HomeAuth() {
                 placeholder="Search..."></input>
             <button onClick={search_song} style={{ backgroundColor: '#1DB954' }}>
                 Submit
+            </button>
+            <button onClick={liked_songs} >
+                User's Liked Songs
             </button>
         </div>
     );
