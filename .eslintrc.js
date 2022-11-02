@@ -1,8 +1,6 @@
 module.exports = {
     "env": {
-        "node": true,
     },
-    "extends": "google",
     "overrides": [
     ],
     "parserOptions": {
