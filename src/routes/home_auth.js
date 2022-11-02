@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Router } from "react-router-dom";
 import { useHistory } from "react-router-dom"
 import axios from 'axios'
+import Iframe from 'react-iframe'
 
 /* function to extract authorization token from URL */
 export const getTokenFromUrl = (hash) => {
@@ -15,23 +16,32 @@ export const getTokenFromUrl = (hash) => {
     return paramsSplit;
 }
 
-const q = document.getElementById('query');
+// Constant to get a users liked songs
+export const liked_songs = async () => {
+    const url = 'https://api.spotify.com/v1/me/tracks';
+    const { data } = await axios.get(url, {
+        headers: {
+            Authorization: `Bearer ${localStorage.accessToken}`,
+        }
+    });
+    console.log(data);
+}
+
+export const search_song = async () => {
+    const url = 'https://api.spotify.com/v1/search';
+    const searchQuery = document.getElementById('song_query').value;
+    const typeQuery = `type=track`;
+    const { data } = await axios.get(`${url}?q=${searchQuery}&${typeQuery}`, {
+        headers: {
+            Authorization: `Bearer ${localStorage.accessToken}`,
+        }
+    });
+    console.log(data);
+}
 
 export default function HomeAuth() {
-
-    const search_song = async () => {
-        const url = 'https://api.spotify.com/v1/search';
-        const searchQuery = document.getElementById('song_query').value;
-        const typeQuery = `type=track`;
-        const { data } = await axios.get(`${url}?q=${searchQuery}&${typeQuery}`, {
-            headers: {
-                Authorization: `Bearer ${localStorage.accessToken}`,
-            }
-        });
-        console.log(data);
-    }
-
     useEffect(() => {
+        localStorage.clear();
         if (window.location.hash) {
             const {
                 access_token,
@@ -40,7 +50,6 @@ export default function HomeAuth() {
             } = getTokenFromUrl(window.location.hash);
             console.log({ access_token });
             window.location.hash = "login=True";
-            localStorage.clear();
             localStorage.setItem("accessToken", access_token);
             localStorage.setItem("tokenType", token_type);
             localStorage.setItem("expiresIn", expires_in);
@@ -48,12 +57,23 @@ export default function HomeAuth() {
     });
 
     return (
-        <div>
-            <input type="search" id="song_query"
-                placeholder="Search..."></input>
-            <button onClick={search_song} style={{ backgroundColor: '#1DB954' }}>
-                Submit
-            </button>
-        </div>
+        <html background-color="#000000">
+            <body >
+                <input type="search" id="song_query"
+                    placeholder="Search..."></input>
+                <button onClick={search_song} style={{ backgroundColor: '#1DB954' }}>
+                    Submit
+                </button>
+                <button onClick={liked_songs} >
+                    User's Liked Songs
+                </button>
+                <div>
+                    <Iframe style="border-radius:12px" position="center" src="https://open.spotify.com/embed/track/40riOy7x9W7GXjyGp4pjAv?utm_source=generator&theme=0" width="80%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
+                </div>
+                <div>
+                    <Iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0dJbxj8JQd9tblCtvE712L?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
+                </div>
+            </body>
+        </html>
     );
 }
