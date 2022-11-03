@@ -3,6 +3,8 @@ import { Router } from "react-router-dom";
 import { useHistory } from "react-router-dom"
 import axios from 'axios'
 import Iframe from 'react-iframe'
+import "../assets/style.css"
+
 
 /* function to extract authorization token from URL */
 export const getTokenFromUrl = (hash) => {
@@ -57,23 +59,27 @@ export default function HomeAuth() {
     });
 
     return (
-        <html background-color="#000000">
-            <body >
-                <input type="search" id="song_query"
-                    placeholder="Search..."></input>
-                <button onClick={search_song} style={{ backgroundColor: '#1DB954' }}>
-                    Submit
-                </button>
-                <button onClick={liked_songs} >
-                    User's Liked Songs
-                </button>
-                <div>
-                    <Iframe style="border-radius:12px" position="center" src="https://open.spotify.com/embed/track/40riOy7x9W7GXjyGp4pjAv?utm_source=generator&theme=0" width="80%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
+        <div class="home-w-login screen">
+            <input type="search" id="song_query"
+                placeholder="Search..."></input>
+            <button onClick={search_song} style={{ backgroundColor: '#1DB954' }}>
+                Submit
+            </button>
+            <button onClick={liked_songs} >
+                User's Liked Songs
+            </button>
+            <div class="playlist-list">
+                <div class="playlist-tile">
+                    <div class="overlap-group">
+                        <div class="album-cover-place-holder">
+                            <Iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0dJbxj8JQd9tblCtvE712L?utm_source=generator&theme=0" width="100%" height="320" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
+                        </div>
+                    </div>
+
                 </div>
-                <div>
-                    <Iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0dJbxj8JQd9tblCtvE712L?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
-                </div>
-            </body>
-        </html>
+
+
+            </div>
+        </div>
     );
 }
