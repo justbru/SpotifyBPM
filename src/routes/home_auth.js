@@ -60,14 +60,6 @@ export default function HomeAuth() {
 
     return (
         <div class="home-w-login screen">
-            <input type="search" id="song_query"
-                placeholder="Search..."></input>
-            <button onClick={search_song} style={{ backgroundColor: '#1DB954' }}>
-                Submit
-            </button>
-            <button onClick={liked_songs} >
-                User's Liked Songs
-            </button>
             <div class="playlist-list">
                 <div class="playlist-tile">
                     <div class="overlap-group">
@@ -75,11 +67,65 @@ export default function HomeAuth() {
                             <Iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0dJbxj8JQd9tblCtvE712L?utm_source=generator&theme=0" width="100%" height="320" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
                         </div>
                     </div>
-
                 </div>
-
-
+                <div class="playlist-tile-1">
+                    <div class="overlap-group">
+                        <div class="album-cover-place-holder">
+                            <Iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0dJbxj8JQd9tblCtvE712L?utm_source=generator&theme=0" width="100%" height="320" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="playlist-tile-1">
+                    <div class="overlap-group">
+                        <div class="album-cover-place-holder">
+                            <Iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0dJbxj8JQd9tblCtvE712L?utm_source=generator&theme=0" width="100%" height="320" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="playlist-tile-1">
+                    <div class="overlap-group">
+                        <div class="album-cover-place-holder">
+                            <Iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0dJbxj8JQd9tblCtvE712L?utm_source=generator&theme=0" width="100%" height="320" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="playlist-tile-1">
+                    <div class="overlap-group">
+                        <div class="album-cover-place-holder">
+                            <Iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0dJbxj8JQd9tblCtvE712L?utm_source=generator&theme=0" width="100%" height="320" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="playlist-tile-1">
+                    <div class="overlap-group">
+                        <div class="album-cover-place-holder">
+                            <Iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0dJbxj8JQd9tblCtvE712L?utm_source=generator&theme=0" width="100%" height="320" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="playlist-tile-1">
+                    <div class="overlap-group">
+                        <div class="album-cover-place-holder">
+                            <Iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0dJbxj8JQd9tblCtvE712L?utm_source=generator&theme=0" width="100%" height="320" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
 }
+
+/*
+
+This is example code to show how to use buttons for API calls
+
+<input type="search" id="song_query"
+                placeholder="Search..."></input>
+            <button onClick={search_song} style={{ backgroundColor: '#1DB954' }}>
+                Submit
+            </button>
+            <button onClick={liked_songs} >
+                User's Liked Songs
+            </button>
+
+*/
