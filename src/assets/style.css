@@ -89,7 +89,7 @@
     Styling for log_in.js
 */
 
-.home-w-login{
+.home-w-login {
     align-items: flex-start;
     background: linear-gradient(180deg, #313131 0%, #0A0A0A 100%);
     background-color: black;
@@ -102,7 +102,36 @@
     width: 1440px;
 }
 
-.playlist-list{
+.home-header {
+    position: fixed;
+    min-width: 100vw;
+    margin-Top: -8px;
+    margin-Left: -16px;
+    color: black;
+    background-color: #1DB954;
+    text-align: left;
+    margin-top: 0px;
+    padding: 0px 8px;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-anchor: "middle";
+    z-index: 6;
+}
+
+.welcome{
+    color: white;
+    font-family: "Open Sans";
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: 50px;
+    margin-top: 66px;
+    min-height: 68px;
+    z-index: 1;
+}
+
+.playlist-list {
     align-items: flex-start;
     align-self: flex-end;
     background-color: #ffffff08;
@@ -112,7 +141,7 @@
     gap: 30px;
     height: 518px;
     margin-right: -6px;
-    margin-top: 17px;
+    margin-top: 80px;
     overflow-x: auto;
     flex-wrap: nowrap;
     padding: 21px 0;
@@ -120,12 +149,12 @@
     z-index: 5;
 }
 
-.playlist-list::-webkit-scrollbar{
+.playlist-list::-webkit-scrollbar {
     display: none;
     width: 0;
 }
 
-.playlist-tile{
+.playlist-tile {
     flex: 0 0 auto;
     border: 1px none;
     border-radius: 10px;
@@ -136,9 +165,9 @@
     width: 324px;
 }
 
-.overlap-group{
+.overlap-group {
     align-items: flex-start;
-    background: linear-gradient(180deg,#646464 0%, #191919 100%);
+    background: linear-gradient(180deg, #646464 0%, #191919 100%);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -149,7 +178,7 @@
     width: 380px;
 }
 
-.album-cover-place-holder{
+.album-cover-place-holder {
     background-color: white;
     border: 1px none;
     height: 275px;
@@ -157,26 +186,20 @@
     width: 275px;
 }
 
-.playlist_title{
+.playlist_title {}
 
-}
+.playlist_info {}
 
-.playlist_info{
+.BPM_count {}
 
-}
-
-.BPM_count{
-
-}
-
-.playlist_description{
+.playlist_description {
     letter-spacing: 0;
     line-height: normal;
     margin-top: 9px;
     min-height: 50px;
 }
 
-.playlist-tile-1{
+.playlist-tile-1 {
     flex: 0 0 auto;
     border: 1px none;
     border-radius: 10px;
