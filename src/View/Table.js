@@ -26,7 +26,7 @@ function TableBody(props) {
   const rows = props.playlistData.map((row, index) => {
     return (
       <tr key={index}>
-        <td>{row.title}</td>
+        <td>{row.name}</td>
         <td>{row.artist}</td>
         <td>{row.album}</td>
         <td>{row.length}</td>

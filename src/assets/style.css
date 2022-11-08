@@ -495,6 +495,7 @@
     background-color: rgba(29, 185, 84, 1);
     border: 1px none;
     display: flex;
+    text-align: left;
     height: 48px;
     justify-content: flex-end;
     left: 0;
@@ -574,8 +575,11 @@
 }
 
 .playlist-table{
-    margin-top: 100px;
-    margin-left: 100px;
+    align-self: center;
+    margin-top: 300px;
+    height: 200px;
+    overflow: auto;
+    z-index: 10;
 }
 
 .hidden, 
@@ -584,7 +588,7 @@
     visibility: none;
 }
 
-.top-bar{
+.top-bar-playlist-gen{
     position: fixed;
     min-width: 100vw;
     margin-top: -8px;
