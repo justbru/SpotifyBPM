@@ -9,6 +9,7 @@ import {
 import HomeAuth from './routes/home_auth.js';
 import Login from "./routes/log_in.js";
 import PlaylistGenerated from './routes/playlist_generated.js';
+import PlaylistGenerator from './routes/playlist_generator.js';
 
 const rootElement = document.getElementById("root");
 render(
@@ -17,6 +18,7 @@ render(
       <Route path="/" element={<Login/>} />
       <Route path="/home" element={<HomeAuth/>} />
       <Route path="/playlist/:id" element={<PlaylistGenerated/>} />
+      <Route path="/generator" element={<PlaylistGenerator/>} />
     </Routes>
   </BrowserRouter>,
   rootElement

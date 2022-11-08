@@ -205,12 +205,6 @@
     width: 275px;
 }
 
-.playlist_title {}
-
-.playlist_info {}
-
-.BPM_count {}
-
 .playlist_description {
     letter-spacing: 0;
     line-height: normal;
@@ -226,6 +220,340 @@
     height: 461px;
     overflow: hidden;
     width: 324px;
+}
+
+/*
+    Styling for playlist_generator.js
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800");
+
+/* Styling */
+.opensans-bold-white-45px {
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans';
+    font-size: 45px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.opensans-normal-white-27px {
+    color: rgba(225, 225, 225, 0.298);
+    font-family: "Open Sans";
+    font-size: 27px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.playlist-generator {
+    align-items: flex-start;
+    background: linear-gradient(180deg, rgb(49.94,
+    49.94, 49.94) 0%, rgb(10.63, 10.63, 10.63) 100%);
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px none;
+    display: flex;
+    height: 1024px;
+    width: 1440px;
+}
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.flex-col {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 53px;
+    margin-top: 101px;
+    min-height: 876px;
+    width: 604px;
+    z-index: 1;
+}
+
+.overlap-group {
+    height: 204px;
+    margin-top: 44px;
+    position: relative;
+    width: 600px;
+}
+
+.rectangle-13-2 {
+    background:  rgba(255, 255, 255, 0.18);
+    border: 1px none;
+    box-shadow: inset 4px 4px 12px 2px #00000040;
+    height: 144px;
+    left: 0;
+    position: absolute;
+    top: 60px;
+    width: 600px;
+}
+
+.description {
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}
+
+.optional-1 {
+    left: 18px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 68px;
+    width: 122px;
+}
+
+.title-1 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 98px;
+    width: 602px;
+}
+
+.rectangle-13 {
+    background-color: rgba(255, 255, 255, 0.18);
+    border: 1px none;
+    box-shadow: inset 4px 4px 12px 12px #00000040;
+    height: 39px;
+    margin-left: 0;
+    width: 600px;
+}
+
+.title-2 {
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 54px;
+    width: 100px;
+}
+
+.genre-one {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 42px;
+    min-height: 98px;
+    width: 602px;
+}
+
+.rectangle-13-3 {
+    background-color: rgba(255, 255, 255, 0.18);
+    border: 1px none;
+    box-shadow: inset 4px 4px 12px 12px #00000040;
+    height: 39px;
+    width: 600px;
+}
+
+.genre {
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 54px;
+    width: 240px;
+}
+
+.create-button {
+    align-items: flex-end;
+    background-color: rgba(29, 185, 84, 1);
+    border: 1px none;
+    border-radius: 100px;
+    display: flex;
+    height: 46px;
+    justify-content: flex-end;
+    margin-top: 58px;
+    min-width: 171px;
+    padding: 5.2px 43.4px;
+}
+
+.create {
+    color: rgba(0, 0, 0, 1);
+    font-family: "Open Sans";
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 84px;
+}
+
+.flex-row {
+    align-items: flex-start;
+    display: flex;
+    gap: 55px;
+    height: 98px;
+    margin-top: 44px;
+    min-width: 604px;
+}
+
+.length {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 98px;
+    width: 414px;
+}
+
+.length-1 {
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 54px;
+    width: 157px;
+}
+
+.overlap-group2 {
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.18);
+    box-shadow: inset 4px 4px 12px 12px #00000040;
+    display: flex;
+    height: 39px;
+    min-width: 410px;
+    padding: 0 12px;
+}
+
+.optional {
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 32px;
+    width: 122px;
+}
+
+.bpm {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 98px;
+    width: 135px;
+}
+
+.rectangle-13-1 {
+    background-color: rgba(255, 255, 255, 0.18);
+    border: 1px none;
+    box-shadow: inset 4px 4px 12px 12px #00000040;
+    height: 39px;
+    width: 133px;
+}
+
+.bpm-1 {
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 54px;
+    width: 101px;
+}
+
+.genre-two {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 42px;
+    min-height: 98px;
+    width: 602px;
+}
+
+.overlap-group1 {
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.18);
+    box-shadow: inset 4px 4px 12px 12px #00000040;
+    display: flex;
+    height: 39px;
+    min-width: 600px;
+    padding: 0 11px;
+}
+
+.playlist-art {
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px none;
+    display: flex;
+    height: 275px;
+    margin-left: 256px;
+    margin-top: 101px;
+    padding: 82px 114px;
+    width: 275px;
+    z-index: 2;
+}
+
+.text-1 {
+    color: rgba(0, 0, 0, 1);
+    font-family: "Open Sans";
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: 1px;
+    min-height: 109px;
+}
+
+.top-bar {
+    align-items: flex-start;
+    background-color: rgba(29, 185, 84, 1);
+    border: 1px none;
+    display: flex;
+    height: 48px;
+    justify-content: flex-end;
+    left: 0;
+    min-width: 1440px;
+    padding: 0 12px;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+}
+
+.search {
+    align-items: flex-end;
+    align-self: flex-end;
+    border: 1px none;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 635px;
+    min-width: 515px;
+}
+
+/* .search-1 */
+
+.title {
+    color: transparent;
+    font-family: "Open Sans";
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: 12px;
+    margin-top: -9px;
+    min-height: 75px;
+    width: 144px;
+}
+
+/* .span0 */
+
+/* .logo */
+
+.subtract {
+    height: 42px;
+    width: 42px;
+}
+
+.user {
+    align-items: flex-end;
+    border: 1px none;
+    cursor: pointer;
+    display: flex;
+    height: 52px;
+    margin-left: 6px;
+    margin-top: -4px;
+    min-width: 43px;
+    padding: 8px 4px;
+}
+
+.vector {
+    height: 35px;
+    width: 34px;
 }
 
 /*
