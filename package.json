@@ -18,7 +18,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "test": "npx esling .",
+    "test": "npx eslint .",
     "dev": "nodemon backend.js",
     "start": "node backend.js"
   },
