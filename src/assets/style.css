@@ -245,6 +245,11 @@
     width: 1440px;
 }
 
+.playlist-table{
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
 .hidden, 
 .hidden * {
     pointer-events: none;
