@@ -17,11 +17,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+   "test": "prettier --check . && jest",
+   "dev": "nodemon backend.js",
+   "start": "node backend.js"
+ },
   "eslintConfig": {
     "extends": [
       "react-app",
