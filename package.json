@@ -1,5 +1,5 @@
 {
-  "name": "spotigo",
+  "name": "spotify_bpm",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,8 +12,7 @@
     "react-dom": "^18.2.0",
     "react-iframe": "^1.8.5",
     "react-router-dom": "^6.4.2",
-    "react-scripts": "^5.0.1",
-    "spotify-web-api-js": "^1.5.2",
+    "react-scripts": "5.0.1",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
