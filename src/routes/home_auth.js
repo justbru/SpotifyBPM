@@ -3,7 +3,7 @@ import { Router } from "react-router-dom";
 import { useHistory } from "react-router-dom"
 import axios from 'axios'
 import Iframe from 'react-iframe'
-import "../assets/style.css"
+import "../assets/home_auth.css"
 import { getSongByTempo } from "./playlist_generator";
 
 
