@@ -12,9 +12,8 @@ module.exports = {
       "eslint:recommended",
       "plugin:import/errors",
       "plugin:react/recommended",
-      "plugin:jsx-a11y/recommended"
     ],
-    "plugins": ["react", "import", "jsx-a11y"],
+    "plugins": ["react", "import"],
     "rules": {
     }
 }
