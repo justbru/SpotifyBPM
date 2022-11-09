@@ -2,26 +2,21 @@ import { useEffect, useState } from "react";
 import { Router } from "react-router-dom";
 import { useHistory, useParams } from "react-router-dom"
 import axios from 'axios'
-import "../assets/style.css"
+import "../assets/playlist_generated.css"
 import Table from "../View/Table.js"
 
 export default function PlaylistGenerated() {
     const [playlist, setPlaylist] = useState([]);
     const { id } = useParams();
-    const [song, setSong] = useState(
-        {
-            name: '',
-            artist: '',
-            album: '',
-            length: '',
-        }
-    );
+    const [albumCover, setAlbumCover] = useState();
 
 
     useEffect(() => {
         parsePlaylist(id).then(result => {
-            if (result)
-                setPlaylist(result);
+            if (result) {
+                setPlaylist(result['listOfSongs']);
+                setAlbumCover(result['albumCover'])
+            }
         });
     }, []);
 
@@ -34,10 +29,10 @@ export default function PlaylistGenerated() {
             }
         });
 
-        const songs = [];
+        const songs = { listOfSongs: [], albumCover: data.images[0].url }
         console.log(data);
         for (let i = 0; i < data.tracks.items.length; i++) {
-            songs.push(
+            songs['listOfSongs'].push(
                 {
                     name: data.tracks.items[i].track.name,
                     artist: data.tracks.items[i].track.artists[0].name,
@@ -48,6 +43,10 @@ export default function PlaylistGenerated() {
         }
 
         return songs;
+    }
+
+    function getAlbumCover(id) {
+
     }
 
     function millisToMinutesAndSeconds(millis) {
@@ -65,8 +64,12 @@ export default function PlaylistGenerated() {
                 SpotiGo
             </h1>
             <div className="playlist-generated">
+                <img class="album-cover" src={albumCover}></img>
                 <div className="playlist-table" >
-                    <Table playlistData={playlist} />
+                    {
+                        playlist.length > 1 &&
+                        <Table playlistData={playlist} />
+                    }
                 </div>
             </div>
         </div>

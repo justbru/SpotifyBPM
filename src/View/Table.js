@@ -1,9 +1,10 @@
 import React from 'react'
+import "../assets/Table.css"
 
 function Table(props) {
   return (
     <table>
-      <TableHeader />
+      <TableHeader/>
       <TableBody playlistData={props.playlistData}/>
     </table>
   );
