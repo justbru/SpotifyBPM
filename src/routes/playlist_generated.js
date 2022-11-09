@@ -1,53 +1,47 @@
-import { useEffect, useState } from "react";
-import { Router } from "react-router-dom";
-import { useHistory, useParams } from "react-router-dom"
+import { useEffect, useState} from "react";
+import { useParams } from "react-router-dom"
 import axios from 'axios'
 import "../assets/playlist_generated.css"
 import Table from "../View/Table.js"
 
 export default function PlaylistGenerated() {
     const [playlist, setPlaylist] = useState([]);
-    const { id } = useParams();
+    const {id} = useParams();
     const [albumCover, setAlbumCover] = useState();
 
-
     useEffect(() => {
+        async function parsePlaylist(id) {
+            const url = `https://api.spotify.com/v1/playlists/${id}`;
+            const { data } = await axios.get(url, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.accessToken}`,
+                }
+            });
+    
+            const songs = { listOfSongs: [], albumCover: data.images[0].url }
+            console.log(data);
+            for (let i = 0; i < data.tracks.items.length; i++) {
+                songs['listOfSongs'].push(
+                    {
+                        name: data.tracks.items[i].track.name,
+                        artist: data.tracks.items[i].track.artists[0].name,
+                        album: data.tracks.items[i].track.album.name,
+                        length: millisToMinutesAndSeconds(data.tracks.items[i].track.duration_ms)
+                    }
+                );
+            }
+    
+            return songs;
+        }
+
         parsePlaylist(id).then(result => {
             if (result) {
                 setPlaylist(result['listOfSongs']);
                 setAlbumCover(result['albumCover'])
             }
         });
-    }, []);
+    }, [id]);
 
-
-    async function parsePlaylist(id) {
-        const url = `https://api.spotify.com/v1/playlists/${id}`;
-        const { data } = await axios.get(url, {
-            headers: {
-                Authorization: `Bearer ${localStorage.accessToken}`,
-            }
-        });
-
-        const songs = { listOfSongs: [], albumCover: data.images[0].url }
-        console.log(data);
-        for (let i = 0; i < data.tracks.items.length; i++) {
-            songs['listOfSongs'].push(
-                {
-                    name: data.tracks.items[i].track.name,
-                    artist: data.tracks.items[i].track.artists[0].name,
-                    album: data.tracks.items[i].track.album.name,
-                    length: millisToMinutesAndSeconds(data.tracks.items[i].track.duration_ms)
-                }
-            );
-        }
-
-        return songs;
-    }
-
-    function getAlbumCover(id) {
-
-    }
 
     function millisToMinutesAndSeconds(millis) {
         var minutes = Math.floor(millis / 60000);
@@ -65,7 +59,7 @@ export default function PlaylistGenerated() {
                     SpotiGo
                 </h1>
                 <div className="playlist-generated">
-                    <img class="album-cover" src={albumCover}></img>
+                    <img class="album-cover" src={albumCover} alt=""></img>
                     <div className="playlist-table" >
                         {
                             playlist.length > 1 &&
