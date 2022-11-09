@@ -2,6 +2,7 @@
 //import { Router } from "react-router-dom";
 import axios from 'axios';
 import { liked_songs } from './home_auth';
+import "../assets/generator.css"
 
 // Get username so we can use it in createPlaylist
 export const getUserId = async () => {
