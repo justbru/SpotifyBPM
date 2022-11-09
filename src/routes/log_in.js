@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import "../assets/style.css"
+import "../assets/log_in.css"
 
 /* Setup for Spotify API Auth */
 const client_id = '27240f6fd5374a14bd84f3598ed0725c';
