@@ -30,7 +30,7 @@ async function postPlaylist(sid) {
 async function deleteBySid(sid){
    const playlistModel = getDbConnection().model("Playlist", PlaylistSchema);
    try{
-      return await playlistModel.deleteOne({'_id': id});
+      return await playlistModel.deleteOne({'_id': sid});
    }
    catch(error){
       console.log(error);
