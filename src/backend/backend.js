@@ -30,7 +30,7 @@ app.get('/home', async (req, res) => {
 });
 
 app.delete('/generated/:id', async (req, res) => {
-   const sid = req.params('id');
+   const sid = req.params['id'];
    const status = await playlistUtil.deleteBySid(sid)
    if (status){
       res.status(204).end();
@@ -40,9 +40,9 @@ app.delete('/generated/:id', async (req, res) => {
    }
 });
 
-app.post('/generated/:id', async (req, res) => {
-   const playlist = req.params('id');
-   const savedPlaylist = await playlistUtil.addPlaylist(playlist);
+app.post('/generated/id', async (req, res) => {
+   const playlist = req.body;
+   const savedPlaylist = await playlistUtil.postPlaylist(playlist);
    if (savedPlaylist)
        res.status(201).send(savedPlaylist);
    else
