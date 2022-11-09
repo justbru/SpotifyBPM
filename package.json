@@ -20,8 +20,9 @@
   "scripts": {
     "test": "npx eslint .",
     "dev": "nodemon backend.js",
-    "start": "node backend.js"
+    "start": "react-scripts start"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",
