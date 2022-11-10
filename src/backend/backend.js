@@ -40,7 +40,7 @@ app.delete('/generated/:id', async (req, res) => {
    }
 });
 
-app.post('/generated/id', async (req, res) => {
+app.post('/generated', async (req, res) => {
    const playlist = req.body;
    const savedPlaylist = await playlistUtil.postPlaylist(playlist);
    if (savedPlaylist)

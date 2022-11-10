@@ -15,10 +15,10 @@ function getDbConnection() {
 
   /* SID: Spotify ID; not to be mistaken with _id, _id is unused.
   */
-async function postPlaylist(sid) {
+async function postPlaylist(playlist) {
    const playlistModel = getDbConnection().model("Playlist", PlaylistSchema);
    try{
-    const playlistToAdd = new playlistModel(sid);
+    const playlistToAdd = new playlistModel(playlist);
     const savedPlaylist = await playlistToAdd.save()
     return savedPlaylist;
    }catch(error) {
@@ -30,7 +30,7 @@ async function postPlaylist(sid) {
 async function deleteBySid(sid){
    const playlistModel = getDbConnection().model("Playlist", PlaylistSchema);
    try{
-      return await playlistModel.deleteOne({'_id': id});
+      return await playlistModel.deleteOne({'sid': sid});
    }
    catch(error){
       console.log(error);

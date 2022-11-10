@@ -12,7 +12,7 @@ const PlaylistSchema = new mongoose.Schema({
     trim: true,
   },
   bpm: {
-     type: Number,
+     type: String,
      required: true,
      trim: true,
   },
