@@ -4,65 +4,61 @@ import axios from 'axios';
 import { liked_songs } from './home_auth';
 import "../assets/generator.css"
 
-// Get username so we can use it in createPlaylist
-export const getUserId = async () => {
-    const url = 'https://api.spotify.com/v1/me';
-    const { data } = await axios.get(url, {
-        headers : {
-            Authorization: `Bearer ${localStorage.accessToken}`,
-        }
-    });
-    return data.id;
-}
-
-// Creates an empty playlist
-export const createPlaylist = async () => {
-    const url = 'https://api.spotify.com/v1/users/' + getUserId() + '/playlists';
-    const { data } = await axios.get(url, {
-        headers: {
-            Authorization: `Bearer ${localStorage.accessToken}`,
-        }
-    })
-}
-
-// Function to parse through each user saved song
-export const getSongByTempo = async () => {
-    // Get track id using liked_songs
-    const liked = liked_songs();
-    liked.then(function(data){
-        const len = data.items.length;
-        let i = 0;
-        // Can get track id using items[n].track.id
-        // For each song id, getAudioAnalysis and extract tempo
-        // If tempo is within range of user input, then put into list
-        while(i < len){
-            const tempo = getAudioAnalysis(data.items[i].track.id);
-            console.log(data.items[i].track.id)
-            tempo.then(function(tempo) {
-                //console.log(tempo)
-                const min = tempo - 5;
-                const max = tempo + 5;
-                if(min <= document.getElementById('userTempo') && max >= document.getElementById('userTempo')){
-                    console.log(data.items[i].track.id)
-                }
-            })
-            i++;
-        }
-    })
-}
-
-// Function to get track tempo
-export const getAudioAnalysis = async (track_id) => {
-    const url = 'https://api.spotify.com/v1/audio-analysis/' + track_id; // need to instantiate track_id
-    const { data } = await axios.get(url, {
-        headers: {
-            Authorization: `Bearer ${localStorage.accessToken}`,
-        }
-    });
-    return data.track.tempo;
-}
-
 export default function PlaylistGenerator() {
+
+    // Get username so we can use it in createPlaylist
+    const getUserId = async () => {
+        const url = 'https://api.spotify.com/v1/me';
+        const { data } = await axios.get(url, {
+            headers : {
+                Authorization: `Bearer ${localStorage.accessToken}`,
+            }
+        });
+        return data.id;
+    }
+
+    // Creates an empty playlist
+    const createPlaylist = async () => {
+        const url = 'https://api.spotify.com/v1/users/' + getUserId() + '/playlists';
+        const { data } = await axios.get(url, {
+            headers: {
+                Authorization: `Bearer ${localStorage.accessToken}`,
+            }
+        })
+    }
+
+    // Function to get track tempo
+    const getAudioAnalysis = async (track_id) => {
+        const url = 'https://api.spotify.com/v1/audio-analysis/' + track_id; // need to instantiate track_id
+        const { data } = await axios.get(url, {
+            headers: {
+                Authorization: `Bearer ${localStorage.accessToken}`,
+            }
+        });
+        return data.track.tempo;
+    }
+
+    async function getSongsWithTempo() {
+        let data = await liked_songs();
+        let songs = [];
+        let tempoMatched = [];
+        for(let i = 0; i < data.items.length; i++){
+            songs.push(data.items[i].track.id);
+        }
+        for(let i = 0; i < songs.length; i++){
+            let tempo = await getAudioAnalysis(songs[i]);
+            let min = tempo - 5;
+            let max = tempo + 5;
+            
+            if(userBpm.value >= min && userBpm.value <= max){
+                tempoMatched.push(songs[i]);
+            }
+        }
+        console.log(tempoMatched);
+        return tempoMatched;
+
+    }
+
     return (
         <html>
             <div class="playlist-generator screen">
@@ -78,12 +74,16 @@ export default function PlaylistGenerator() {
                 <div class="flex-col">
                     <div class="title-1">
                         <div class="title-2 opensans-bold-white-45px">Title</div>
-                        <div class="rectangle-13"></div>
+                        <form>
+                            <input type="text" id="playlist_title" name="playlist_title" class="rectangle-13"></input>
+                        </form>
                     </div>
                     <div class="flex-row">
                         <div class="bpm">
                             <div class="bpm-1 opensans-bold-white-45px">BPM</div>
-                            <div class="rectangle-13-1"></div>
+                            <form>
+                                <input type="text" id="userBpm" name="userBpm" class="rectangle-13-1"></input>
+                            </form>
                         </div>
                         <div class="length">
                             <div class="length-1 opensans-bold-white-45px">Length</div>
@@ -102,13 +102,12 @@ export default function PlaylistGenerator() {
                         <div class="rectangle-13-3"></div>
                     </div>
                     <div class="genre-two">
+                        <div class="genre opensans-bold-white-45px">Genre Two</div>
                         <div class="overlap-group1">
                             <div class="optional opensans-normal-white-27px">[optional]</div>
                         </div>
                     </div>
-                    <div class="create-button">
-                        <div class="create">Create</div>
-                    </div>
+                    <button onClick={getSongsWithTempo} className="create-button">Create</button>
                 </div>
             </div>
         </html>
