@@ -1,0 +1,225 @@
+
+
+/*
+    Styling for log_in.js
+*/
+.App {
+    text-align: center;
+}
+
+/* used for setting the background */
+.login-header {
+    background-image: url(./login_background.png);
+    background-size: cover;
+    position: fixed;
+    background-position: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-Size: cover;
+    background-Repeat: 'no-repeat';
+    background-Position: center;
+    margin-Top: -8px;
+    margin-Left: -16px;
+}
+
+/* Used for setting the green bar at the top with the black spotigo text 
+    !!! Reuse this for any time you need to paste the header bar and logo !!!
+*/
+.login-header>h1 {
+    color: black;
+    background-color: #1DB954;
+    text-align: left;
+    margin-top: 0px;
+    padding: 0px 8px;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-anchor: "middle";
+}
+
+/* Used for setting the large text above the button; first line */
+.login-header>h2 {
+    color: black;
+    margin-top: 55px;
+    font-size: xxx-large;
+    font-family: sans-serif;
+}
+
+/* Used for setting the large text above the button; second line */
+.login-header>h3 {
+    color: black;
+    margin-top: -35px;
+    font-size: xxx-large;
+    font-family: sans-serif;
+}
+
+/* Used for setting the small text above button */
+.login-header>h4 {
+    color: black;
+    margin-top: -10px;
+    font-size: large;
+    font-weight: lighter;
+    font-family: sans-serif;
+}
+
+/* Used for customizing the button */
+.login-button {
+    background-color: #1DB954;
+    font-size: 24px;
+    padding: 10px 30px;
+    position: fixed;
+    color: black;
+    font-weight: 500;
+    padding: 10px 45px;
+    border-radius: 32px;
+    outline: 0;
+    text-transform: uppercase;
+    margin: 330px -163px;
+    cursor: pointer;
+    box-shadow: 0px 2px 2px lightgray;
+    transition: ease background-color 250ms;
+}
+
+/* Used for customizing the `continue without login` link */
+.continue-wo-login-link {
+    color: gray;
+    position: fixed;
+    margin: 80px -75px;
+}
+
+
+/*
+    Styling for log_in.js
+*/
+
+.home-w-login {
+    align-items: flex-start;
+    background: linear-gradient(180deg, #313131 0%, #0A0A0A 100%);
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    margin-top: -8px;
+    margin-left: -8px;
+    height: 1440px;
+    overflow: auto;
+    width: 1440px;
+}
+
+.home-header {
+    position: fixed;
+    top: 0;
+    min-width: 100vw;
+    margin-Top: -8px;
+    margin-Left: -16px;
+    color: black;
+    background-color: #1DB954;
+    text-align: left;
+    margin-top: 0px;
+    padding: 0px 8px;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-anchor: "middle";
+    z-index: 7;
+}
+
+.welcome {
+    color: white;
+    font-family: "Open Sans";
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: 50px;
+    margin-top: 66px;
+    min-height: 68px;
+    z-index: 1;
+}
+
+.playlist-list {
+    align-items: flex-start;
+    align-self: flex-end;
+    background-color: #ffffff08;
+    border: 1px none;
+    border-radius: 15px;
+    display: flex;
+    gap: 30px;
+    height: 518px;
+    margin-right: -6px;
+    margin-top: 80px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 21px 0;
+    width: 1383px;
+    z-index: 5;
+}
+
+.playlist-list-1{
+    align-items: flex-start;
+    align-self: flex-end;
+    background-color: #ffffff08;
+    border: 1px none;
+    border-radius: 15px;
+    display: flex;
+    gap: 30px;
+    height: 518px;
+    margin-top: 17px;
+    overflow: hidden;
+    overflow-x: scroll;
+    padding: 21px 0;
+    width: 1377px;
+    z-index: 6;
+}
+
+.playlist-list::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+.playlist-tile {
+    flex: 0 0 auto;
+    border: 1px none;
+    border-radius: 10px;
+    display: flex;
+    height: 461px;
+    margin-left: 22px;
+    overflow: hidden;
+    width: 324px;
+}
+
+.overlap-group {
+    align-items: flex-start;
+    background: linear-gradient(180deg, #646464 0%, #191919 100%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-left: -24px;
+    margin-top: -25px;
+    min-height: 474px;
+    padding: 4px 48px;
+    width: 380px;
+}
+
+.album-cover-place-holder {
+    background-color: white;
+    border: 1px none;
+    height: 275px;
+    margin-top: 50px;
+    width: 275px;
+}
+
+.playlist_description {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: 9px;
+    min-height: 50px;
+}
+
+.playlist-tile-1 {
+    flex: 0 0 auto;
+    border: 1px none;
+    border-radius: 10px;
+    display: flex;
+    height: 461px;
+    overflow: hidden;
+    width: 324px;
+}
+
