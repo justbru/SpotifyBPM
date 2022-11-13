@@ -5,7 +5,7 @@ let dbConnection;
 
 function getDbConnection() {
     if (!dbConnection) {
-        dbConnection = mongoose.createConnection("mongodb://localhost:27017/playlists", {
+        dbConnection = mongoose.createConnection("mongodb+srv://fdudley:rPQfpsytNB7oC4Fy@spotigodb.bxewpi2.mongodb.net/?retryWrites=true&w=majority", {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
@@ -38,6 +38,24 @@ async function deleteBySid(sid){
    }
 }
 
+async function getPlaylists(genre, bpm){
+   const playlistModel = getDbConnection().model("Playlist", PlaylistSchema);
+   let result;
+   if (genre === undefined && bpm === undefined){
+       result = await playlistModel.find();
+   }
+   else if (genre && !bpm) {
+       result = await findPlaylistByGenre(genre);
+   }
+   else if (bpm && !genre){
+       result = await findPlaylistByBPM(bpm);
+   } 
+   else if (bpm && genre){
+      result = await findPlaylistByBoth(genre, bpm);
+   }  
+   return result;  
+}
+
 async function findPlaylistByName(name){
    const playlistModel = getDbConnection().model("Playlist", PlaylistSchema);
    return await playlistModel.find({'name':name});
@@ -53,8 +71,11 @@ async function findPlaylistByGenre(genre){
    return await playlistModel.find({'genre':genre});
 }
 
+async function findPlaylistByBPM(bpm){
+   const playlistModel = getDbConnection().model("Playlist", PlaylistSchema);
+   return await playlistModel.find({'bpm':bpm});
+}
+
 exports.postPlaylist = postPlaylist;
 exports.deleteBySid = deleteBySid;
-exports.findPlaylistByGenre = findPlaylistByGenre;
-exports.findPlaylistBySid = findPlaylistBySid;
-exports.findPlaylistByName = findPlaylistByName;
+exports.getPlaylists = getPlaylists;

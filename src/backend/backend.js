@@ -18,14 +18,15 @@ app.get('/', (req, res) => {
 /* send to home page */
 
 app.get('/home', async (req, res) => {
-   const genre = req.query('genre');
+   const genre = req.query['genre'];
+   const bpm = req.query['bpm'];
    try {
-      const result = await playlistUtil.findPlaylistByGenre(genre);
+      const result = await playlistUtil.getPlaylists(genre, bpm);
       res.send({playlist_list: result});
    }
    catch(error){
       console.log(error);
-      res.send(500).send('Server Error')
+      res.status(500).send('Server Error')
    }
 });
 
