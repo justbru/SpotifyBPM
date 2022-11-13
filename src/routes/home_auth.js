@@ -1,12 +1,7 @@
 import { useEffect } from "react";
 import axios from 'axios'
-<<<<<<< Updated upstream
-import "../assets/home_auth.css"
-import { getSongByTempo } from "./playlist_generator";
-=======
 import Iframe from 'react-iframe'
 import "../assets/style.css"
->>>>>>> Stashed changes
 
 
 /* function to extract authorization token from URL */
