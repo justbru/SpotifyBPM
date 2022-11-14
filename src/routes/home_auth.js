@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import axios from 'axios'
-import Iframe from 'react-iframe'
-import "../assets/style.css"
+import "../assets/home_auth.css"
+
 
 
 /* function to extract authorization token from URL */
@@ -70,7 +70,7 @@ export default function HomeAuth() {
                     </button>
                 </h1>
 
-                <div class="home-w-login screen">
+                <div class="home-w-login">
                     <div class="playlist-list">
                         <div class="playlist-tile">
                             <div class="overlap-group">

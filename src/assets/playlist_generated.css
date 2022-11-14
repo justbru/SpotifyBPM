@@ -13,6 +13,7 @@
     height: 1440px;
     overflow: auto;
     width: 1440px;
+    min-width: 100vw;
 }
 
 .album-cover {
@@ -27,7 +28,6 @@
     height: 300px;
     overflow: auto;
     z-index: 10;
-    
 }
 
 .playlist-table thead th{
