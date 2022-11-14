@@ -3,8 +3,10 @@
 import axios from 'axios';
 import { liked_songs } from './home_auth';
 import "../assets/generator.css"
+import { useNavigate } from "react-router-dom";
 
 export default function PlaylistGenerator() {
+    const navigate = useNavigate();
 
     // Get username so we can use it in createPlaylist
     const getUserId = async () => {
@@ -20,10 +22,10 @@ export default function PlaylistGenerator() {
     // Creates an empty playlist
     const createPlaylist = async (userId) => {
         const url = 'https://api.spotify.com/v1/users/' + userId + '/playlists';
-        const title = playlist_title.value
+        const title = document.getElementById('playlist_title').value;
         const playlistData = {
             name: title,
-            description: description.value,
+            description: document.getElementById('description').value,
             public: true
         };
         const config = {
@@ -51,7 +53,7 @@ export default function PlaylistGenerator() {
                 'Content-Type': 'application/json'
             }
         }
-        const data = await axios.post(url, JSON.stringify(trackData), config);
+        await axios.post(url, JSON.stringify(trackData), config);
     }
 
     // Function to get track tempo
@@ -70,6 +72,9 @@ export default function PlaylistGenerator() {
         let data = await liked_songs();
         let songs = [];
         let tempoMatched = [];
+        const userBpm = document.getElementById('userBpm').value;
+        console.log(userBpm);
+
         for(let i = 0; i < data.items.length; i++){
             songs.push(data.items[i].track.id);
         }
@@ -77,11 +82,14 @@ export default function PlaylistGenerator() {
             let tempo = await getAudioAnalysis(songs[i]);
             let min = tempo - 5;
             let max = tempo + 5;
+            console.log(tempo);
             
-            if(userBpm.value >= min && userBpm.value <= max){
+            if(userBpm >= min & userBpm <= max){
+                console.log("hello")
                 tempoMatched.push(data.items[i].track.uri);
             }
         }
+        console.log(tempoMatched);
         return tempoMatched;
 
     }
@@ -90,8 +98,8 @@ export default function PlaylistGenerator() {
         const userId = await getUserId();
         const playlistId = await createPlaylist(userId);
         let songs = await getSongsWithTempo();
-        console.log(songs)
-        addTracksToPlaylist(playlistId, songs);
+        await addTracksToPlaylist(playlistId, songs);
+        navigate(`/playlist/${playlistId}`);
     }
 
     return (

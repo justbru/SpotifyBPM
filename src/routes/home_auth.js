@@ -18,7 +18,7 @@ export const getTokenFromUrl = (hash) => {
 
 // Constant to get a users liked songs
 export const liked_songs = async () => {
-    const url = 'https://api.spotify.com/v1/me/tracks';
+    const url = 'https://api.spotify.com/v1/me/tracks?limit=50';
     const { data } = await axios.get(url, {
         headers: {
             Authorization: `Bearer ${localStorage.accessToken}`,
