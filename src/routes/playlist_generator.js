@@ -135,8 +135,8 @@ export default function PlaylistGenerator() {
                             </div>
                         </div>
                     </div>
-                    <div class="overlap-group">
-                        <div class = "description opensans-bold-white-45px">Description</div>
+                    <div class="description">
+                        <div class = "description-1 opensans-bold-white-45px">Description</div>
                         <form>
                             <textarea id='description' name='description' class='rectangle-13-2'></textarea>
                         </form>
