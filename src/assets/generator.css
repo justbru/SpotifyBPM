@@ -48,31 +48,32 @@
     z-index: 1;
 }
 
-.overlap-group {
-    height: 204px;
-    margin-top: 44px;
-    position: relative;
-    width: 600px;
+.description {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 42px;
+    min-height: 98px;
+    width: 602px;
 }
 
 .rectangle-13-2 {
-    background:  rgba(255, 255, 255, 0.18);
+    background-color:  rgba(255, 255, 255, 0.18);
     border: 1px none;
     box-shadow: inset 4px 4px 12px 12px #00000040;
     height: 144px;
-    left: 0;
-    position: absolute;
     top: 60px;
     width: 600px;
     resize: none;
 }
 
-.description {
-    left: 0;
+
+.description-1 {
     letter-spacing: 0;
     line-height: normal;
-    position: absolute;
-    top: 0;
+    min-height: 54px;
+    width: 240px;
 }
 
 .optional-1 {
