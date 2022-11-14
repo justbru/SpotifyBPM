@@ -1,0 +1,135 @@
+
+.home-w-login {
+    align-items: flex-start;
+    background: linear-gradient(180deg, #313131 0%, #0A0A0A 100%);
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    margin-top: -8px;
+    margin-left: -8px;
+    height: 1440px;
+    overflow: auto;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.home-header {
+    position: fixed;
+    top: 0;
+    min-width: 100vw;
+    margin-Top: -8px;
+    margin-Left: -16px;
+    color: black;
+    background-color: #1DB954;
+    text-align: left;
+    margin-top: 0px;
+    padding: 0px 8px;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-anchor: "middle";
+    z-index: 7;
+}
+
+.welcome {
+    color: white;
+    font-family: "Open Sans";
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: 50px;
+    margin-top: 66px;
+    min-height: 68px;
+    z-index: 1;
+}
+
+.playlist-list {
+    align-items: flex-start;
+    align-self: flex-end;
+    background-color: #ffffff08;
+    border: 1px none;
+    border-radius: 15px;
+    display: flex;
+    gap: 30px;
+    height: 518px;
+    margin-right: -60px;
+    margin-top: 80px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 21px 0;
+    min-width: 92vw;
+    z-index: 5;
+}
+
+.playlist-list-1{
+    align-items: flex-start;
+    align-self: flex-end;
+    background-color: #ffffff08;
+    border: 1px none;
+    border-radius: 15px;
+    display: flex;
+    gap: 30px;
+    height: 518px;
+    margin-top: 17px;
+    overflow: hidden;
+    overflow-x: scroll;
+    padding: 21px 0;
+    width: 1377px;
+    z-index: 6;
+    min-width: 92vw;
+
+}
+
+.playlist-list::-webkit-scrollbar {
+    display: none;
+    width: 0;
+}
+
+.playlist-tile {
+    flex: 0 0 auto;
+    border: 1px none;
+    border-radius: 10px;
+    display: flex;
+    height: 461px;
+    margin-left: 22px;
+    overflow: hidden;
+    width: 324px;
+}
+
+.overlap-group {
+    align-items: flex-start;
+    background: linear-gradient(180deg, #646464 0%, #191919 100%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-left: -24px;
+    margin-top: -25px;
+    min-height: 474px;
+    padding: 4px 48px;
+    width: 380px;
+}
+
+.album-cover-place-holder {
+    background-color: white;
+    border: 1px none;
+    height: 275px;
+    margin-top: 50px;
+    width: 275px;
+}
+
+.playlist_description {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: 9px;
+    min-height: 50px;
+}
+
+.playlist-tile-1 {
+    flex: 0 0 auto;
+    border: 1px none;
+    border-radius: 10px;
+    display: flex;
+    height: 461px;
+    overflow: hidden;
+    width: 324px;
+}
