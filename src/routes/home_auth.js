@@ -3,6 +3,7 @@ import axios from 'axios'
 import "../assets/home_auth.css"
 
 
+
 /* function to extract authorization token from URL */
 export const getTokenFromUrl = (hash) => {
     const accessToken = hash.substring(1);
