@@ -1,0 +1,79 @@
+/*
+    Styling for playlist_generated.js
+*/
+.playlist-generated {
+    align-items: flex-start;
+    background: linear-gradient(180deg, #313131 0%, #0A0A0A 100%);
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-top: -8px;
+    margin-left: -8px;
+    height: 1440px;
+    overflow: auto;
+    width: 1440px;
+}
+
+.album-cover {
+    align-self: center;
+    margin-top: 80px;
+    height: 200px
+}
+
+.playlist-table {
+    align-self: center;
+    margin-top: 30px;
+    height: 300px;
+    overflow: auto;
+    z-index: 10;
+    
+}
+
+.playlist-table thead th{
+    position: sticky; top: 0; z-index: 1;
+}
+
+table  { border-collapse: collapse; width: 100%; }
+th, td { padding: 8px 16px; }
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: none;
+}
+
+.top-bar-playlist-gen {
+    position: fixed;
+    min-width: 100vw;
+    margin-top: -8px;
+    margin-Left: -16px;
+    color: black;
+    position: fixed;
+    background-color: #1DB954;
+    text-align: left;
+    padding: 0px 8px;
+    font-family: sans-serif;
+    font-weight: 600;
+    text-anchor: "middle";
+    z-index: 7;
+}
+
+.search {
+    margin-left: 635px;
+    min-width: 515px;
+}
+
+.search-1 {
+    height: 46px;
+    margin-bottom: -0.12px;
+    width: 46px;
+}
+
+.logo {
+    padding: 0 2.2px;
+}
+
+.span0 {
+    color: black
+}

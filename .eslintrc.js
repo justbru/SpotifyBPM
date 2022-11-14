@@ -1,18 +1,19 @@
 module.exports = {
     "env": {
-        "node": true,
+        "browser": true,
+        "es2021": true,
+        "jest": true
     },
-    "extends": "google",
     "overrides": [
     ],
     "parserOptions": {
-        "ecmaVersion": "2015",
+        "ecmaVersion": "2017",
         "sourceType": "module",
         "allowImportExportEverywhere": true
     },
     "plugins": [
-        "react"
+        "eslint-plugin-react",
+        "eslint-plugin-html",
     ],
-    "rules": {
-    }
+    "extends": "react-app"
 }
