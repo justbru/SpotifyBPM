@@ -6,6 +6,7 @@ generates a playlist consisting of songs near the given BPM.
 - This would be a useful tool for quickly creating and sharing workout playlists, tailored to your likes and interests.
 - Users can share generated playlists, and the site will curate these playlists and allow users to search through the playlist database.
 - Users can log in to have their feed and recommendations personalized.
+a
 
 Prototype:
 https://www.figma.com/file/xZggrNkc4vgaNoWWnbD3Dv/SpotifyBPM?node-id=0%3A1
