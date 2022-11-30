@@ -12,3 +12,6 @@ https://www.figma.com/file/xZggrNkc4vgaNoWWnbD3Dv/SpotifyBPM?node-id=0%3A1
 
 Code Linter/Style Checker:
 https://eslint.org/
+
+Sequence Diagram:
+![image](https://user-images.githubusercontent.com/55904876/204933037-9e64316a-9f39-4419-9fb4-255ad566cf57.png)
