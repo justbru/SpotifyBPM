@@ -14,5 +14,5 @@ Code Linter/Style Checker:
 https://eslint.org/
 
 Sequence Diagram:
-![spotigodiagram](https://user-images.githubusercontent.com/55904876/204933152-8070c960-7d89-44e9-927f-c39e282cb3f0.png)
+![spotigodiagram](https://user-images.githubusercontent.com/55904876/204933152-8070c960-7d89-44e9-927f-c39e282cb3f0.png =250x250)
 
