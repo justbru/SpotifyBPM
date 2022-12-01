@@ -14,5 +14,6 @@ Code Linter/Style Checker:
 https://eslint.org/
 
 Sequence Diagram:
+
 <img src = 'https://user-images.githubusercontent.com/55904876/204933152-8070c960-7d89-44e9-927f-c39e282cb3f0.png' width=50% height=50%>
 
